@@ -17,7 +17,7 @@
 
 ## Approach
 - Port the **oracle** persona from `pi-blackbytes/src/sub-agents/oracle.ts`: read-only, Opus, high effort, the long-context-handling + high-risk self-check guardrails, effort-tag output contract. Strip Pi-specific tool names; restrict to CC read tools via `tools:` allowlist.
-- Port the **librarian** persona from `pi-blackbytes/src/sub-agents/librarian.ts`: the strict 3-condition gate (external + multi-source + direct-tools-insufficient), citation/no-fabrication policy, external-content-safety, request-classification. Map tools to `WebSearch`, `WebFetch`, `Read`, `Grep`, `Glob` + context7 MCP if available.
+- Port the **librarian** persona from `pi-blackbytes/src/sub-agents/librarian.ts`: the strict 3-condition gate (external + multi-source + direct-tools-insufficient), citation/no-fabrication policy, external-content-safety, request-classification. Map tools to `WebSearch`, `WebFetch`, `Read`, `Grep`, `Glob` — a web-only research surface (no MCP tool in the allowlist, so the prompt must not assume one).
 - Distill the Bytes overlay's **delegation routing matrix** (cost/useWhen/avoidWhen) into a `routing-discipline` skill — the cost-aware "don't over-delegate" discipline, adapted to CC's native + plugin agents.
 - Distill the Bytes **verification contract** (typecheck→lint→test→build, never fabricate green) into a `verification-honesty` skill.
 - Manifest: `.claude-plugin/plugin.json` (`name` required; add version/description/author/keywords) + a `.claude-plugin/marketplace.json` so it's installable. Agents in `agents/`, skills in `skills/<name>/SKILL.md` (auto-discovered).
@@ -39,4 +39,4 @@
 ## Notes / risks
 - R1: Overlap with native review skills → mitigated by omitting `reviewer` in v1.
 - R2: Duplication with `kiro-blackbytes` (also Claude-targeted) → justified only because CC plugin can leverage worktree isolation / workflows / skills Kiro lacks; keep personas thin and CC-idiomatic rather than copy-paste.
-- R3: context7 MCP availability is environment-dependent → librarian must degrade gracefully to WebSearch/WebFetch.
+- R3: librarian's `tools:` allowlist grants no MCP tool, so its prompt must describe a web-only surface (WebSearch/WebFetch + local Read/Grep/Glob) and must not instruct it to use context7 or any tool it can't actually call.
