@@ -1,9 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
-  "name": "cc-blackbytes",
+  "name": "bytes",
   "displayName": "Blackbytes",
   "version": "0.1.0",
-  "description": "Specialist subagents and engineering-discipline skills for Claude Code. The Claude Code member of the blackbytes family: a skeptical read-only Oracle consult, a gated multi-source Librarian, plus routing-cost and verification-honesty disciplines. Ships only what Claude Code lacks natively.",
+  "description": "Specialist subagents, engineering-discipline skills, and workflow commands for Claude Code. The Claude Code member of the blackbytes family: a skeptical read-only Oracle consult, a gated multi-source Librarian, routing-cost and verification-honesty disciplines, plus ported workflow commands (commit-and-push, review-fresh-eyes, suggest-innovation, update-docs). Ships only what Claude Code lacks natively.",
   "author": {
     "name": "Invoker"
   },
@@ -13,6 +13,7 @@
     "research",
     "reasoning",
     "verification",
+    "commands",
     "workflow"
   ],
   "license": "MIT"

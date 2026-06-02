@@ -9,9 +9,9 @@
   },
   "plugins": [
     {
-      "name": "cc-blackbytes",
+      "name": "bytes",
       "source": "./",
-      "description": "Skeptical read-only Oracle consult, gated multi-source Librarian, plus routing-cost and verification-honesty discipline skills.",
+      "description": "Skeptical read-only Oracle consult, gated multi-source Librarian, routing-cost and verification-honesty discipline skills, plus ported workflow commands.",
       "category": "workflow"
     }
   ]
