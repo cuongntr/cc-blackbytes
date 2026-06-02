@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "blackbytes",
+  "owner": {
+    "name": "Invoker"
+  },
+  "metadata": {
+    "description": "The blackbytes family for Claude Code — specialist subagents and engineering-discipline skills."
+  },
+  "plugins": [
+    {
+      "name": "cc-blackbytes",
+      "source": "./",
+      "description": "Skeptical read-only Oracle consult, gated multi-source Librarian, plus routing-cost and verification-honesty discipline skills.",
+      "category": "workflow"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# Local task-tracking scaffold (beads) — not part of the plugin
+.beads/
+
+# OS / editor cruft
+.DS_Store
